@@ -18,9 +18,12 @@ class AuthController extends Controller
     {
 
         $user = new User();
-        $user->name = $request->name;
+        $user->nom = $request->nom;
+        $user->prenom = $request->prenom;
         $user->email = $request->email;
-        $user->type_user = $request->type_user;
+        $user->CIN = $request->CIN;
+        $user->role = $request->role;
+        $user->adresse = $request->adresse;
         $user->password = bcrypt($request->password);
         $user->save();
         /* if ($this->loginAfterSignUp) {
