@@ -22,7 +22,9 @@ class CreateFacturesTable extends Migration
             $table->double('syndic');
             $table->double('taxe');
             $table->boolean('archive');
-            $table->integer('nbt_relance');
+            $table->double('reparation');
+            $table->double('personnel');
+            $table->integer('nbr_relance');
             $table->foreignId('location_id')->constrained('locations')->onUpdate('cascade');
             $table->timestamps();
         });

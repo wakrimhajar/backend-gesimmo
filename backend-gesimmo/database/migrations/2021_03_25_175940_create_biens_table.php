@@ -20,8 +20,12 @@ class CreateBiensTable extends Migration
             $table->string('statut');
             $table->double('loyer_mensuel');
             $table->double('syndic');
-            $table->double('taxe');
+            $table->double('taxe_habitation');
             $table->boolean('archive');
+            $table->integer('nbr_piece');
+            $table->boolean('equipement');
+            $table->boolean('ascenseur');
+            $table->integer('etage');
             $table->foreignId('user_id')->constrained('users')->onUpdate('cascade');
             $table->timestamps();
         });

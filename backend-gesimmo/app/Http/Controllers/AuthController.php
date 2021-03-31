@@ -12,7 +12,7 @@ class AuthController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth:api', ['except' => ['login', 'register', 'logout']]);
+        //  $this->middleware('auth:api', ['except' => ['login', 'register', 'logout']]);
     }
     public function register(RegistrationFormRequest $request)
     {
@@ -42,7 +42,7 @@ class AuthController extends Controller
     public function login()
     {
         $credentials = request(['email', 'password']);
-        //, 'type_user' => 'gestionnaire'
+
         if (!$token = Auth::attempt($credentials)) {
             return response()->json(['error' => 'Email ou mot de passe est incorrect'], 401);
         }
